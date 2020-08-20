@@ -7,21 +7,24 @@ var paperBall,ground,dustbin;
 
 function preload()
 {
-	
+  
 }
 
 function setup() {
-	createCanvas(800, 700);
+  //createCanvas(800, 700);
+  createCanvas(1600, 700);
+  rectMode(CENTER);
 
+  engine = Engine.create();
+  world = engine.world;
 
-	engine = Engine.create();
-	world = engine.world;
-
-	//Create the Bodies Here.
-    ground = new Ground (200,370,700,20);
-    paperBall = new Ball (200,280,30);
-    dustbin = new Dustbin(1200,650);
-	Engine.run(engine);
+  //Create the Bodies Here.
+    //paperBall = new Ball (50,780,20);
+    //ground = new Ground (350,790,700,20);
+    ground = new Ground(width/2,670,width,20)
+    dustbin=new Dustbin(1200,650);
+    //dustbin = new Dustbin;
+  Engine.run(engine);
   
 }
 
@@ -29,12 +32,10 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
-  paperBall.display();
+  //paperBall.display();
   ground.display();
   dustbin.display();
-  drawSprites();
+  //drawSprites();
  
 }
-
-
 
