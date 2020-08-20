@@ -3,7 +3,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-var paperBall,ground,dust;
+var paperBall,ground,dustbin;
 
 function preload()
 {
@@ -20,7 +20,7 @@ function setup() {
 	//Create the Bodies Here.
     ground = new Ground (200,370,700,20);
     paperBall = new Ball (200,280,30);
-    dust = new Dustbin(20,20);
+    dustbin = new Dustbin(1200,650);
 	Engine.run(engine);
   
 }
@@ -31,7 +31,7 @@ function draw() {
   background(0);
   paperBall.display();
   ground.display();
-  dust.display();
+  dustbin.display();
   drawSprites();
  
 }
