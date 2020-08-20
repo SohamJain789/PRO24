@@ -2,10 +2,10 @@ class Ball {
 constructor(x,y,radius){
     var options = {
     
-    isStatic:false
+    isStatic:true,
     //restitution:0.3
-    friction:0.5
-    density:1.2
+    friction:0.5,
+    density:1.2,
 }
 this.body = Matter.Bodies.circle(x,y,radius,options);
 this.radius = radius;
@@ -19,7 +19,7 @@ var angle = this.body.angle;
 push();
 translate(pos.x,pos.y);
 fill("green");
-ellipse(pos.x,pos.y,width,height);
+ellipse(pos.x,pos.y,this.radius);
 
 } 
 }
